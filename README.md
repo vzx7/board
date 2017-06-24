@@ -6,7 +6,7 @@ ALL DONE ;)
 <p>Развернуть проект:</p>
 
 ```
- git clone https://github.com/vzx7/chat-react.git board
+ git clone https://github.com/vzx7/board.git board
  cd board
  npm i
  npm start
