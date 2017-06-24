@@ -1,0 +1,38 @@
+{
+  "name": "react-name",
+  "version": "1.0.0",
+  "description": "React Table application",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack -p"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "css-loader": "^0.26.4",
+    "prop-types": "^15.5.10",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-drag-and-drop": "^2.4.0",
+    "react-easy-bind": "^0.2.0",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "node-sass": "^4.1.1",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
