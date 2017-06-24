@@ -27,7 +27,8 @@ class App extends React.Component {
   }
 
   handleDelete (that) {
-    this.setState({tasks: this.state.tasks.filter(task => task.id !== +that.target.dataset.id)})
+    const tasks = this.state.tasks.filter(task => task.id !== +that.target.dataset.id)
+    this.setState({tasks, count: tasks.length})
   }
 
   handleSave (that) {
@@ -137,8 +138,10 @@ class App extends React.Component {
           complited={tasksComplited.shift()}
        />)
     }
-    
-    if ((this.state.count - countNew) % 3 === 0) {
+
+    //if ((this.state.count - countNew) % 3 === 0) {
+    const arrLen = arr.length
+    if (countProcess === arrLen || countComplited === arrLen || countNew === arrLen || countTest === arrLen) {
       const len = ++arr.length
        arr.push(<Tr 
           key={len}
