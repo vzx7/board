@@ -1,4 +1,4 @@
-CHAT REACT (TEST)
+BOARD REACT (TEST)
 ===========
 
 ALL DONE ;)
@@ -6,9 +6,8 @@ ALL DONE ;)
 <p>Развернуть проект:</p>
 
 ```
- mkdir chat
- git clone https://github.com/vzx7/chat-react.git chat
- cd chat
+ git clone https://github.com/vzx7/chat-react.git board
+ cd board
  npm i
  npm start
 ```
