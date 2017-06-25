@@ -74,17 +74,17 @@ class Tr extends React.Component {
                   <Button handleClick={this.handleClick} type="save"/>
                 </div>
               </div>
-              <div className="_task_new">
-                {this.props.new
-                  ? 
+              {this.props.new
+                ? 
+                <div className="_task_new">
                   <Draggable type="drag" data={this.props.new.id}>
                     <BoxTask 
                       elId={this.props.new.id} 
                       handleClick={this.handleClick} 
                       task={this.props.new.task} />
                   </Draggable>
-                  :  ''}
               </div>
+              :  ''}
             </td>
             <td>
               <div className="task">
