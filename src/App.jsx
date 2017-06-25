@@ -5,38 +5,8 @@ import easyBind from 'react-easy-bind';
 import Button from './components/Button';
 import Tr from './components/Tr';
 // Методы редюсера
-import { addTask, deleteTask, editTask, dndTask } from './actions'
 
 class App extends React.Component {
-  constructor (props, context) {
-    super(props, context);
-    this.store = this.context.store
-    this.dropType = 0
-  }
-
-  componentDidMount () {
-    this.unsubscribe = this.store.subscribe(() => this.forceUpdate())
-  }
-
-  componentWillUnmount () {
-    this.unsubscribe()
-  }
-
-  handleAddTask (task, count) {
-    this.store.dispatch(addTask(task, count))
-  }
-
-  handleEditTask (task, id) {
-    this.store.dispatch(editTask(task, id))
-  }
-
-  handleDeleteTask (id) {
-    this.store.dispatch(deleteTask(id))
-  }
-
-  handleDnD(status, id) {
-    this.store.dispatch(dndTask(status, id))
-  }
 
   showTascsList () {
     const getstatus = status => {
@@ -47,7 +17,7 @@ class App extends React.Component {
     }
     const ul = document.createElement('ul')
     tasks_list.innerHTML = ''
-    this.store.getState().sort((a, b) => {
+    this.props.tasks.sort((a, b) => {
       if (a.status > b.status) return 1
       else if (a.status < b.status) return -1
       else return 0
@@ -79,11 +49,11 @@ class App extends React.Component {
           key={i}
           number={i}
           count={countTasks}
-          handleSave={this.handleAddTask}
-          handleEdit={this.handleEditTask}
-          handleDelete={this.handleDeleteTask}
-          handleDnD={this.handleDnD}
           new={tasksNew.shift()}
+          handleSave={this.props.handleSave}
+          handleEdit={this.props.handleEdit}
+          handleDelete={this.props.handleDelete}
+          handleDnD={this.props.handleDnD}
           process={tasksInProcess.shift()}
           tests={tasksForTest.shift()}
           complited={tasksComplited.shift()}
@@ -97,10 +67,10 @@ class App extends React.Component {
           key={len}
           number={len}
           count={countTasks}
-          handleSave={this.handleAddTask}
-          handleEdit={this.handleEditTask}
-          handleDelete={this.handleDeleteTask}
-          handleDnD={this.handleDnD}
+          handleSave={this.props.handleSave}
+          handleEdit={this.props.handleEdit}
+          handleDelete={this.props.handleDelete}
+          handleDnD={this.props.handleDnD}
        />)
     }
     return arr
@@ -120,7 +90,7 @@ class App extends React.Component {
                 </tr>
             </thead>
             <tbody className="content">
-                { this.handleTasksList(this.store.getState()).map(tasks => tasks) }
+                { this.handleTasksList(this.props.tasks).map(tasks => tasks) }
             </tbody>
         </table>
         <input onClick={this.showTascsList} type="button" className="show utl" value="show" />
@@ -129,11 +99,5 @@ class App extends React.Component {
     );
   }
 }
-
-App.contextTypes = {
-  store: PropTypes.object.isRequired
-}.propTypes = {
-  store: PropTypes.object.isRequired
-};
 
 export default easyBind(App)

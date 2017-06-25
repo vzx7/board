@@ -4,7 +4,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import PropTypes from 'prop-types';
 import reducer from './reducers'
-import App from './App'
+import App from './containers/AppContainer'
 // Эмуляция БД
 import tasks from './tasks'
 // Итеграция стилей SASS
