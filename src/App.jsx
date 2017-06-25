@@ -42,8 +42,8 @@ class App extends React.Component {
     const getstatus = status => {
       if (status === 0) return 'в процессе'
       else if (status === 1) return 'тестирование'
-      else if (status === 2) return 'готово'
-      else if (status === -1) return 'в стадии написания'
+      else if (status === 2) return 'готова'
+      else if (status === -1) return 'добавлена'
     }
     const ul = document.createElement('ul')
     tasks_list.innerHTML = ''
