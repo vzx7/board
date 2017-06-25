@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTask, deleteTask, editTask, dndTask } from '../actions'
-import App from '../App'
+import App from '../components/App'
 
 const mapStateToProps = (state) => {
     return {

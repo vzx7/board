@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import easyBind from 'react-easy-bind';
 // Компоненты
-import Button from './components/Button';
-import Tr from './components/Tr';
+import Button from './Button';
+import Tr from './Tr';
 // Методы редюсера
 
 class App extends React.Component {
 
-  showTascsList () {
+  showTasksList () {
     const getstatus = status => {
       if (status === 0) return 'в процессе'
       else if (status === 1) return 'тестирование'
@@ -31,7 +31,7 @@ class App extends React.Component {
     tasks_list.style.display = 'block'
   }
 
-  handleTasksList (tasks) {
+  renderTasksList (tasks) {
     const setArrTasksType = (tasks, status) => tasks.filter(task => task.status === status)
     const tasksInProcess = setArrTasksType(tasks, 0)
     const tasksForTest = setArrTasksType(tasks, 1)
@@ -90,10 +90,10 @@ class App extends React.Component {
                 </tr>
             </thead>
             <tbody className="content">
-                { this.handleTasksList(this.props.tasks).map(tasks => tasks) }
+                { this.renderTasksList(this.props.tasks).map(tasks => tasks) }
             </tbody>
         </table>
-        <input onClick={this.showTascsList} type="button" className="show utl" value="show" />
+        <input onClick={this.showTasksList} type="button" className="show utl" value="show" />
         <div id="tasks_list" />
       </div>
     );
