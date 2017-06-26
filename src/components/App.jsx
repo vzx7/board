@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import easyBind from 'react-easy-bind';
 // Компоненты
-import Button from './Button';
 import Tr from './Tr';
-// Методы редюсера
 
 class App extends React.Component {
 
