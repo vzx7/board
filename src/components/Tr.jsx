@@ -68,50 +68,50 @@ class Tr extends React.Component {
                       onDragEnter={this.getDropEl} />}
              </td>
              <td>
-               <div className='task'>
                  {this.props.process
                     ?
-                    <Draggable type='drag' data={this.props.process.id}>
-                      <BoxTask elId={this.props.process.id} handleClick={this.handleClick} task={this.props.process.task} />
-                    </Draggable>
+                     <div className='task'>
+                      <Draggable type='drag' data={this.props.process.id}>
+                        <BoxTask elId={this.props.process.id} handleClick={this.handleClick} task={this.props.process.task} />
+                      </Draggable>
+                    </div>
                     :
                     <Droppable
                       data-id='0'
                       types={['drag']}
                       onDrop={this.getDragEl}
                       onDragEnter={this.getDropEl} />}
-               </div>
              </td>
              <td>
-               <div className='task'>
                  {this.props.tests
                     ?
-                    <Draggable type='drag' data={this.props.tests.id}>
-                      <BoxTask elId={this.props.tests.id} handleClick={this.handleClick} task={this.props.tests.task} />
-                    </Draggable>
+                     <div className='task'>
+                      <Draggable type='drag' data={this.props.process.id}>
+                        <BoxTask elId={this.props.process.id} handleClick={this.handleClick} task={this.props.process.task} />
+                      </Draggable>
+                    </div>
                     :
                     <Droppable
                       data-id='1'
                       types={['drag']}
                       onDrop={this.getDragEl}
                       onDragEnter={this.getDropEl} />}
-               </div>
              </td>
              <td>
-               <div className='task'>
                  {this.props.complited
                     ?
-                    <Draggable type='drag' data={this.props.complited.id}>
-                      <BoxTask elId={this.props.complited.id} handleClick={this.handleClick} task={this.props.complited.task} />
-                    </Draggable>
+                     <div className='task'>
+                      <Draggable type='drag' data={this.props.process.id}>
+                        <BoxTask elId={this.props.process.id} handleClick={this.handleClick} task={this.props.process.task} />
+                      </Draggable>
+                    </div>
                     :
                     <Droppable
                       data-id='2'
                       types={['drag']}
                       onDrop={this.getDragEl}
                       onDragEnter={this.getDropEl} />}
-               </div>
-             </td>
+            </td>
            </tr>;
   }
 }
