@@ -13,4 +13,3 @@ ALL DONE ;)
 ```
 
 Проект запустится по адресу http://localhost:8080/: [открыть](http://localhost:8080/)
-# board
